@@ -1,0 +1,22 @@
+{
+  "strict": true,
+  "compilerOptions": {
+    "noImplicitAny": true,
+    "baseUrl": ".",
+    "strict": true,
+    "types": ["node"],
+    "moduleResolution": "Bundler",
+    "esModuleInterop": true,
+    "target": "ESNext",
+    "module": "ESNext",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "verbatimModuleSyntax": true,
+    "isolatedModules": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true
+  },
+  "ts-node": {
+    "esm": true
+  }
+}

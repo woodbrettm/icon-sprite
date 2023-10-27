@@ -1,0 +1,14 @@
+{
+  "name": "icon-sprite",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "runArgs": ["--name", "woodbrettm.icon-sprite.dev"],
+  "postCreateCommand": ["pnpm", "install"],
+  "remoteUser": "node",
+  "customizations": {
+    "vscode": {
+      "extensions": ["esbenp.prettier-vscode"]
+    }
+  }
+}
