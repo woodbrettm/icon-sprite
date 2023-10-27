@@ -1,7 +1,7 @@
 # Icon Sprite
 
 ![npm](https://img.shields.io/npm/v/icon-sprite)
-![Github Actions](https://github.com/woodbrettm/icon-sprite/actions/workflows/ci.yml/badge.svg?branch=main)
+![Github Actions](https://github.com/woodbrettm/icon-sprite/actions/workflows/tests.yml/badge.svg?branch=main)
 ![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
 
 This package contains functions which allow a dev to build an icon sprite from a folder of svg icons
