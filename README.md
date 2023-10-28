@@ -1,8 +1,8 @@
 # Icon Sprite
 
-![npm](https://img.shields.io/npm/v/icon-sprite)
-![Github Actions](https://github.com/woodbrettm/icon-sprite/actions/workflows/tests.yml/badge.svg?branch=main)
-![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
+[![npm](https://img.shields.io/npm/v/icon-sprite)](https://www.npmjs.com/package/icon-sprite)
+[![Github Actions](https://github.com/woodbrettm/icon-sprite/actions/workflows/tests.yml/badge.svg?branch=main)](https://github.com/woodbrettm/icon-sprite/actions/workflows/tests.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/woodbrettm/icon-sprite/blob/main/LICENSE)
 
 This package contains functions which allow a dev to build an icon sprite from a folder of svg icons
 and export it to a single icon sprite svg file.
