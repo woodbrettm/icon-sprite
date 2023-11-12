@@ -1,6 +1,6 @@
 {
   "name": "icon-sprite",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "type": "module",
   "description": "Combines svg icons into a single sprite file.",
   "author": "Brett Wood",
@@ -23,7 +23,7 @@
     "test": "vitest --run",
     "test:ci": "vitest --run --coverage",
     "coverage": "vitest run --coverage",
-    "demo-sprite": "ts-node ./scripts/demo-sprite.ts"
+    "demo-sprite": "esrun ./demo/generate-sprite.ts"
   },
   "files": [
     "dist"
@@ -42,10 +42,10 @@
   "devDependencies": {
     "@types/node": "20.8.5",
     "@vitest/coverage-v8": "0.34.6",
-    "ts-node": "10.9.1",
     "typescript": "5.2.2",
     "vite": "4.5.0",
     "vite-plugin-dts": "3.6.1",
-    "vitest": "0.34.6"
+    "vitest": "0.34.6",
+    "@digitak/esrun": "3.2.25"
   }
 }

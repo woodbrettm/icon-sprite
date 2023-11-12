@@ -13,21 +13,74 @@ and export it to a single icon sprite svg file.
 - The svg file name is used to create the symbol id. So a filename of `up-arrow` can be referenced
   in html using `#up-arrow`. (See below).
 
+## Installation
+
+```bash
+npm install -D icon-sprite
+```
+
 ## Usage
 
-In addition to the documentation below, the repo contains a `demo` folder for reference, as well as a usage
-example generating the demo content in the `scripts` folder.
+At the moment, the package is intended to be used inside a custom node script file, though
+could also be used in a build process. In addition to the documentation below, the repo
+contains a demo folder for reference.
 
-### Functions
+### Exports
+
+The package exports two functions. One to build the icon sprite as a string, and one to
+export it to a file:
 
 ```javascript
 import { buildSprite, exportSpriteToFile } from 'icon-sprite';
 
-const spriteString = buildSprite('path-to-icons-folder');
+const sprite = await buildSprite('absolute-path-to-folder-containing-icons');
+exportSpriteToFile(sprite, 'absolute-path-to-file.svg');
 
-exportSpriteToFile(spriteString, 'path-to-sprite-file.svg');
-// The sprite must NOT be exported to the same folder as the source icons,
-// as buildSprite() imports ALL svgs from the 'path-to-icons-folder'.
+// Directory of sprite file and input icons cannot be the same, as
+// buildSprite imports all svgs from the folder.
+```
+
+### Script Example
+
+#### `Folder Structure:`
+
+```
+src
+  assets
+    icons
+      source
+
+scripts
+  icon-sprite.ts|js
+
+package.json
+```
+
+#### `icon-sprite.ts|js:`
+
+```javascript
+import path from 'path';
+import { buildSprite, exportSpriteToFile } from 'icon-sprite';
+
+const sourceFolderPath = path.resolve(__dirname, '../src/assets/icons/source');
+const spriteFilePath = path.resolve(__dirname, '../src/assets/icons/icon-sprite.svg');
+
+const spriteString = await buildSprite(sourceFolderPath);
+
+exportSpriteToFile(spriteString, spriteFilePath);
+```
+
+#### `package.json`
+
+I'm using @digitak/esrun instead of ts-node. Standard js file with
+node command is also fine.
+
+```json
+{
+  "scripts": {
+    "icon-sprite": "esrun ./scripts/icon-sprite.ts"
+  }
+}
 ```
 
 ### SVG Code
@@ -73,14 +126,12 @@ The outputted file is formatted using Prettier.
         other-attr="..."
       />
     </symbol>
+    ... other icons converted to <symbol>
   </defs>
 </svg>
 ```
 
 ### Referencing SVGs
-
-The svg `icon-sprite.svg` file needs to be imported into the html file
-first. Once done, each icon in the sprite can be referenced like so:
 
 ```html
 <svg><use href="path-to-sprite-file.svg#up-arrow"></use></svg>
