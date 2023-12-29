@@ -1,14 +1,19 @@
 {
+  "$schema": "https://raw.githubusercontent.com/devcontainers/spec/main/schemas/devContainer.schema.json",
   "name": "icon-sprite",
   "build": {
     "dockerfile": "Dockerfile"
   },
-  "runArgs": ["--name", "woodbrettm.icon-sprite.dev"],
+  "runArgs": ["--name", "icon-sprite.dev"],
   "postCreateCommand": ["pnpm", "install"],
   "remoteUser": "node",
   "customizations": {
     "vscode": {
-      "extensions": ["esbenp.prettier-vscode"]
+      "extensions": [
+        "esbenp.prettier-vscode",
+        "dbaeumer.vscode-eslint",
+        "tamasfe.even-better-toml"
+      ]
     }
   }
 }

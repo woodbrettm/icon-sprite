@@ -1,0 +1,45 @@
+name: On Push To Main
+
+on:
+  push:
+    branches:
+      - main
+
+# So no other instances of release workflow run at same time
+concurrency: ${{ github.workflow }}-${{ github.ref }}
+
+jobs:
+  release:
+    name: Changesets Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+
+      - name: Prep Project
+        uses: ./.github/composite-actions/node-setup-ubuntu
+
+      - name: Code Checks
+        uses: ./.github/composite-actions/code-checks
+
+      - name: 1Password Load Tokens
+        id: op-tokens
+        uses: 1password/load-secrets-action@v1
+        with:
+          export-env: true
+        env:
+          OP_SERVICE_ACCOUNT_TOKEN: ${{ secrets.OP_SERVICE_ACCOUNT_TOKEN }}
+          NPM_TOKEN: op://dev/icon-sprite/github-actions-npm-token
+
+      - name: Release Pull Request or Publish to NPM
+        uses: changesets/action@v1
+        with:
+          publish: pnpm changeset:release
+          version: pnpm changeset:version
+          # Version Commmit Message
+          commit: '[CI] Changeset: Update Package Versions'
+          # PR Title
+          title: '[CI] Changeset: Prep Package Versions for Release'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # NPM_TOKEN: set in steps.op-tokens (export-env: true)

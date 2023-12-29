@@ -1,0 +1,21 @@
+# socket.dev
+
+version: 2
+
+# Trigger PR When These Files Change
+triggerPaths:
+  - 'package.json'
+  - 'pnpm-lock.yaml'
+
+githubApp:
+  enabled: true
+  pullRequestAlertsEnabled: true
+  dependencyOverviewEnabled: true
+  projectReportsEnabled: true
+
+projectIgnorePaths:
+  - 'dist'
+  - 'node_modules'
+  - '.pnpm-store'
+  - '.coverage'
+  - '.turbo'

@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json.schemastore.org/package",
+  "name": "testing",
+  "version": "0.1.0",
+  "dependencies": {
+    "icon-sprite": "file:../"
+  },
+  "devDependencies": {
+    "pathe": "1.1.1"
+  },
+  "scripts": {
+    "sprite": "sprite"
+  }
+}

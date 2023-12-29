@@ -1,3 +1,16 @@
+# Todo
+
+- Add NPM token to 1password
+- Enable github action write permission in workflow syntax
+- Add Prettier to devdependencies
+- How to set node version engines?
+- Verify using publint.dev
+- #!/bin/env node is being removed from the icon-sprite file
+- Make sure to test loading the config in a monorepo. IS the cwd of a subdir when called from that packagejson?
+- Referencing SVGs section needs an aria attribute (hidden or presentation? or something else)
+- SideEffects false in package.json?
+- Run integration tests against playground, which load the package using file:../
+
 # Icon Sprite
 
 [![npm](https://img.shields.io/npm/v/icon-sprite)](https://www.npmjs.com/package/icon-sprite)
@@ -63,7 +76,10 @@ import path from 'path';
 import { buildSprite, exportSpriteToFile } from 'icon-sprite';
 
 const sourceFolderPath = path.resolve(__dirname, '../src/assets/icons/source');
-const spriteFilePath = path.resolve(__dirname, '../src/assets/icons/icon-sprite.svg');
+const spriteFilePath = path.resolve(
+  __dirname,
+  '../src/assets/icons/icon-sprite.svg',
+);
 
 const spriteString = await buildSprite(sourceFolderPath);
 

@@ -1,19 +1,18 @@
 {
-  "strict": true,
   "compilerOptions": {
-    "noImplicitAny": true,
     "baseUrl": ".",
-    "strict": true,
-    "types": ["node"],
-    "moduleResolution": "Bundler",
-    "esModuleInterop": true,
+    "esModuleInterop": false,
+    "skipLibCheck": true,
     "target": "ESNext",
-    "module": "ESNext",
-    "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
-    "verbatimModuleSyntax": true,
+    "moduleDetection": "force",
     "isolatedModules": true,
-    "forceConsistentCasingInFileNames": true,
+    "lib": ["ESNext"],
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "moduleResolution": "Bundler",
+    "module": "ESNext",
     "noEmit": true
-  }
+  },
+  "exclude": ["**/dist/**", "**/node_modules/**"]
 }

@@ -1,0 +1,6 @@
+tsup.config.ts
+dist
+.pnpm-store
+node_modules
+coverage
+.DS_Store
