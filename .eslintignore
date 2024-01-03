@@ -1,5 +1,6 @@
 tsup.config.ts
 dist
+.turbo
 .pnpm-store
 node_modules
 coverage

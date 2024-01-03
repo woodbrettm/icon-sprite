@@ -14,23 +14,24 @@ import { deepmergeInto } from 'deepmerge-ts';
 
 export async function resolveJobSpecs
 (
-  jobSpecsArg: JobSpec | Array<JobSpec>,
+  jobSpecsArg: JobSpec | JobSpec[],
   optionsArg?: DeepPartial<JobSpecOptions>,
 )
-: Promise<Array<Job>>
+: Promise<readonly Job[]>
 {
-  const jobSpecs = Array.isArray(jobSpecsArg)
-    ? jobSpecsArg
-    : [jobSpecsArg]
-  ;
+  const jobSpecs = (
+    Array.isArray(jobSpecsArg)
+      ? jobSpecsArg
+      : [jobSpecsArg]
+  );
 
   const options: JobSpecOptions = {
-    cwd: process.cwd(),
+    workDir: process.cwd(),
   }
 
   deepmergeInto(options, optionsArg);
 
-  const jobs: Array<Job> = [];
+  const jobs: Job[] = [];
 
   for (const spec of jobSpecs) {
     const job = await specToJob(spec, options);
@@ -45,13 +46,14 @@ async function specToJob
   spec: JobSpec,
   options: JobSpecOptions,
 )
-: Promise<Job>
+: Promise<Readonly<Job>>
 {
   const inputIgnore = spec.inputIgnore ?? options.inputIgnore;
+
   const files = await globby(
     spec.inputMatch,
     {
-      cwd: options.cwd,
+      cwd: options.workDir,
       absolute: true,
       unique: true,
       ...(
@@ -61,9 +63,11 @@ async function specToJob
     }
   )
 
-  const outputPath = spec.outputFile
-    ? resolve(options.cwd, spec.outputFile)
-    : false
+  const outputPath = (
+    spec.outputFile
+      ? resolve(options.workDir, spec.outputFile)
+      : false
+  );
 
   return Object.freeze({
     name: spec.name,

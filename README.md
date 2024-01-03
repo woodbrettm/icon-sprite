@@ -10,6 +10,7 @@
 - Referencing SVGs section needs an aria attribute (hidden or presentation? or something else)
 - SideEffects false in package.json?
 - Run integration tests against playground, which load the package using file:../
+- Do I need a peer dependency on Typescript? How to specify typescript version?
 
 # Icon Sprite
 

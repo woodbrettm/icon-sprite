@@ -12,6 +12,6 @@ node_modules
 # Misc
 LICENSE
 
-TS & JS Files
+# TS & JS Files
 **/*.ts
 **/*.js

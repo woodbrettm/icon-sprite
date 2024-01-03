@@ -22,6 +22,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "search.exclude": {
-    "pnpm-lock.yaml": true
+    "pnpm-lock.yaml": true,
+    "node_modules": true
   }
 }

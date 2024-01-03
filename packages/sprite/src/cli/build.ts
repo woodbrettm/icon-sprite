@@ -49,7 +49,7 @@ export const build = defineCommand({
   },
   async run({ args: parsedArgs }) {
 
-    const workspaceConfig = await loadWorkspaceConfig();
+    const workspaceConfig = await loadWorkspaceConfig({});
     console.log(workspaceConfig);
   },
 })

@@ -21,7 +21,7 @@
     }
   ],
   "rules": {
-    "@typescript-eslint/array-type": ["error", { "default": "generic" }],
+    "@typescript-eslint/array-type": ["error", { "default": "array" }],
     "@typescript-eslint/consistent-type-definitions": ["error", "type"]
   }
 }

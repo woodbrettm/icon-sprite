@@ -14,7 +14,7 @@ import {
 
 export async function runJob
 (
-  job: Job,
+  job: Readonly<Job>,
   config: ResolvedConfig,
   context: BuildContext,
 )

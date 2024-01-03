@@ -24,12 +24,19 @@ import { build } from './build';
 
 const main = defineCommand ({
   meta: {
-    name: 'sprite',
+    name: 'iconsprite',
     description: 'Icon Sprite CLI',
     version: packageJson.version,
   },
-  async run() {
-    await runRoot();
+  async run({ args }) {
+    console.log('MAIN');
+    console.log(this);
+    if (args._[0] !== 'build') {
+      await showUsage(this);
+    }
+    console.log('ROOT');
+    console.log(args);
+
   },
   subCommands: {
     build,
@@ -37,7 +44,3 @@ const main = defineCommand ({
 });
 
 await runMain(main);
-
-async function runRoot() {
-  await showUsage(main);
-}

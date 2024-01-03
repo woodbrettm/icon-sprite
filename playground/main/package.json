@@ -3,12 +3,12 @@
   "name": "testing",
   "version": "0.1.0",
   "dependencies": {
-    "icon-sprite": "file:../"
+    "icon-sprite": "workspace:*"
   },
   "devDependencies": {
     "pathe": "1.1.1"
   },
   "scripts": {
-    "sprite": "sprite"
+    "sprite": "icon-sprite build"
   }
 }

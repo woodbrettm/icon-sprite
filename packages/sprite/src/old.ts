@@ -43,14 +43,14 @@ export function exportSpriteToFile(source: string, filePath: string) {
 }
 
 function getFolderSvgs(folderPath: string) {
-  const allFiles: Array<fs.Dirent> = fs.readdirSync(folderPath, {
+  const allFiles: fs.Dirent[] = fs.readdirSync(folderPath, {
     withFileTypes: true,
   });
   const svgs = allFiles.filter((f) => path.extname(f.name) === '.svg');
   return svgs;
 }
 
-function convertSvgsToSymbols(svgs: Array<fs.Dirent>) {
+function convertSvgsToSymbols(svgs: fs.Dirent[]) {
   let output = '';
   for (const svg of svgs) {
     const filePath = `${svg.path}/${svg.name}`;

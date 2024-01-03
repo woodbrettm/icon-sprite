@@ -4,66 +4,124 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-dependencies:
-  c12:
-    specifier: 1.5.1
-    version: 1.5.1
-  citty:
-    specifier: 0.1.5
-    version: 0.1.5
-  consola:
-    specifier: 3.2.3
-    version: 3.2.3
-  deepmerge-ts:
-    specifier: 5.1.0
-    version: 5.1.0
-  globby:
-    specifier: 14.0.0
-    version: 14.0.0
-  klona:
-    specifier: 2.0.6
-    version: 2.0.6
-  ora:
-    specifier: 7.0.1
-    version: 7.0.1
-  pathe:
-    specifier: 1.1.1
-    version: 1.1.1
-  prettier:
-    specifier: 3.1.1
-    version: 3.1.1
-  ts-essentials:
-    specifier: 9.4.1
-    version: 9.4.1(typescript@5.3.3)
+importers:
 
-devDependencies:
-  '@changesets/cli':
-    specifier: 2.27.1
-    version: 2.27.1
-  '@types/node':
-    specifier: 20.10.5
-    version: 20.10.5
-  '@typescript-eslint/eslint-plugin':
-    specifier: 6.15.0
-    version: 6.15.0(@typescript-eslint/parser@6.15.0)(eslint@8.56.0)(typescript@5.3.3)
-  '@typescript-eslint/parser':
-    specifier: 6.15.0
-    version: 6.15.0(eslint@8.56.0)(typescript@5.3.3)
-  '@vitest/coverage-v8':
-    specifier: 1.1.0
-    version: 1.1.0(vitest@1.1.0)
-  eslint:
-    specifier: 8.56.0
-    version: 8.56.0
-  tsup:
-    specifier: 8.0.1
-    version: 8.0.1(typescript@5.3.3)
-  typescript:
-    specifier: 5.3.3
-    version: 5.3.3
-  vitest:
-    specifier: 1.1.0
-    version: 1.1.0(@types/node@20.10.5)
+  .:
+    dependencies:
+      c12:
+        specifier: 1.5.1
+        version: 1.5.1
+      citty:
+        specifier: 0.1.5
+        version: 0.1.5
+      consola:
+        specifier: 3.2.3
+        version: 3.2.3
+      deepmerge-ts:
+        specifier: 5.1.0
+        version: 5.1.0
+      globby:
+        specifier: 14.0.0
+        version: 14.0.0
+      klona:
+        specifier: 2.0.6
+        version: 2.0.6
+      ora:
+        specifier: 7.0.1
+        version: 7.0.1
+      pathe:
+        specifier: 1.1.1
+        version: 1.1.1
+      prettier:
+        specifier: 3.1.1
+        version: 3.1.1
+    devDependencies:
+      '@changesets/cli':
+        specifier: 2.27.1
+        version: 2.27.1
+      '@types/node':
+        specifier: 20.10.5
+        version: 20.10.5
+      '@typescript-eslint/eslint-plugin':
+        specifier: 6.15.0
+        version: 6.15.0(@typescript-eslint/parser@6.15.0)(eslint@8.56.0)(typescript@5.3.3)
+      '@typescript-eslint/parser':
+        specifier: 6.15.0
+        version: 6.15.0(eslint@8.56.0)(typescript@5.3.3)
+      '@vitest/coverage-v8':
+        specifier: 1.1.0
+        version: 1.1.0(vitest@1.1.0)
+      eslint:
+        specifier: 8.56.0
+        version: 8.56.0
+      tsup:
+        specifier: 8.0.1
+        version: 8.0.1(typescript@5.3.3)
+      turbo:
+        specifier: 1.10.16
+        version: 1.10.16
+      typescript:
+        specifier: 5.3.3
+        version: 5.3.3
+      vitest:
+        specifier: 1.1.0
+        version: 1.1.0(@types/node@20.10.5)
+
+  packages/sprite:
+    dependencies:
+      c12:
+        specifier: 1.5.1
+        version: 1.5.1
+      citty:
+        specifier: 0.1.5
+        version: 0.1.5
+      consola:
+        specifier: 3.2.3
+        version: 3.2.3
+      deepmerge-ts:
+        specifier: 5.1.0
+        version: 5.1.0
+      defu:
+        specifier: 6.1.3
+        version: 6.1.3
+      globby:
+        specifier: 14.0.0
+        version: 14.0.0
+      klona:
+        specifier: 2.0.6
+        version: 2.0.6
+      ora:
+        specifier: 7.0.1
+        version: 7.0.1
+      pathe:
+        specifier: 1.1.1
+        version: 1.1.1
+    devDependencies:
+      '@total-typescript/ts-reset':
+        specifier: 0.5.1
+        version: 0.5.1
+      '@types/node':
+        specifier: 20.10.5
+        version: 20.10.5
+      ts-essentials:
+        specifier: 9.4.1
+        version: 9.4.1(typescript@5.3.3)
+      tsup:
+        specifier: 8.0.1
+        version: 8.0.1(typescript@5.3.3)
+      typescript:
+        specifier: 5.3.3
+        version: 5.3.3
+
+  playground/main:
+    dependencies:
+      icon-sprite:
+        specifier: workspace:*
+        version: link:../../packages/sprite
+    devDependencies:
+      pathe:
+        specifier: 1.1.1
+        version: 1.1.1
 
 packages:
 
@@ -774,6 +832,10 @@ packages:
     resolution: {integrity: sha512-rUV5WyJrJLoloD4NDN1V1+LDMDWOa4OTsT4yYJwQNpTU6FWxkxHpL7eu4w+DmiH8x/EAM1otkPE1+LaspIbplw==}
     engines: {node: '>=18'}
     dev: false
+
+  /@total-typescript/ts-reset@0.5.1:
+    resolution: {integrity: sha512-AqlrT8YA1o7Ff5wPfMOL0pvL+1X+sw60NN6CcOCqs658emD6RfiXhF7Gu9QcfKBH7ELY2nInLhKSCWVoNL70MQ==}
+    dev: true
 
   /@types/istanbul-lib-coverage@2.0.6:
     resolution: {integrity: sha512-2QF/t/auWm0lsy8XtKVPG19v3sSOQlJe/YHZgfjb/KBBHOGSV+J2q/S671rcq9uTBrLAXmZpqJiaQbMT+zNU1w==}
@@ -3703,7 +3765,7 @@ packages:
         optional: true
     dependencies:
       typescript: 5.3.3
-    dev: false
+    dev: true
 
   /ts-interface-checker@0.1.13:
     resolution: {integrity: sha512-Y/arvbn+rrz3JCKl9C4kVNfTfSm2/mEp5FSz5EsZSANGPSlQrpRI5M4PKF+mJnE52jOO90PnPSc3Ur3bTQw0gA==}
@@ -3760,6 +3822,66 @@ packages:
       strip-ansi: 6.0.1
       wcwidth: 1.0.1
       yargs: 17.7.2
+    dev: true
+
+  /turbo-darwin-64@1.10.16:
+    resolution: {integrity: sha512-+Jk91FNcp9e9NCLYlvDDlp2HwEDp14F9N42IoW3dmHI5ZkGSXzalbhVcrx3DOox3QfiNUHxzWg4d7CnVNCuuMg==}
+    cpu: [x64]
+    os: [darwin]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /turbo-darwin-arm64@1.10.16:
+    resolution: {integrity: sha512-jqGpFZipIivkRp/i+jnL8npX0VssE6IAVNKtu573LXtssZdV/S+fRGYA16tI46xJGxSAivrZ/IcgZrV6Jk80bw==}
+    cpu: [arm64]
+    os: [darwin]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /turbo-linux-64@1.10.16:
+    resolution: {integrity: sha512-PpqEZHwLoizQ6sTUvmImcRmACyRk9EWLXGlqceogPZsJ1jTRK3sfcF9fC2W56zkSIzuLEP07k5kl+ZxJd8JMcg==}
+    cpu: [x64]
+    os: [linux]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /turbo-linux-arm64@1.10.16:
+    resolution: {integrity: sha512-TMjFYz8to1QE0fKVXCIvG/4giyfnmqcQIwjdNfJvKjBxn22PpbjeuFuQ5kNXshUTRaTJihFbuuCcb5OYFNx4uw==}
+    cpu: [arm64]
+    os: [linux]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /turbo-windows-64@1.10.16:
+    resolution: {integrity: sha512-+jsf68krs0N66FfC4/zZvioUap/Tq3sPFumnMV+EBo8jFdqs4yehd6+MxIwYTjSQLIcpH8KoNMB0gQYhJRLZzw==}
+    cpu: [x64]
+    os: [win32]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /turbo-windows-arm64@1.10.16:
+    resolution: {integrity: sha512-sKm3hcMM1bl0B3PLG4ifidicOGfoJmOEacM5JtgBkYM48ncMHjkHfFY7HrJHZHUnXM4l05RQTpLFoOl/uIo2HQ==}
+    cpu: [arm64]
+    os: [win32]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /turbo@1.10.16:
+    resolution: {integrity: sha512-2CEaK4FIuSZiP83iFa9GqMTQhroW2QryckVqUydmg4tx78baftTOS0O+oDAhvo9r9Nit4xUEtC1RAHoqs6ZEtg==}
+    hasBin: true
+    optionalDependencies:
+      turbo-darwin-64: 1.10.16
+      turbo-darwin-arm64: 1.10.16
+      turbo-linux-64: 1.10.16
+      turbo-linux-arm64: 1.10.16
+      turbo-windows-64: 1.10.16
+      turbo-windows-arm64: 1.10.16
     dev: true
 
   /type-check@0.4.0:
@@ -3836,6 +3958,7 @@ packages:
     resolution: {integrity: sha512-pXWcraxM0uxAS+tN0AG/BF2TyqmHO014Z070UsJ+pFvYuRSq8KH8DmWpnbXe0pEPDHXZV3FcAbJkijJ5oNEnWw==}
     engines: {node: '>=14.17'}
     hasBin: true
+    dev: true
 
   /ufo@1.3.2:
     resolution: {integrity: sha512-o+ORpgGwaYQXgqGDwd+hkS4PuZ3QnmqMMxRuajK/a38L6fTpcE5GPIfrf+L/KemFzfUpeUQc1rRS1iDBozvnFA==}
