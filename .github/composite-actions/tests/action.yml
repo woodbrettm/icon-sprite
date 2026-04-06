@@ -1,0 +1,17 @@
+name: Tests
+description: Runs tests and linting
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Eslint
+      run: pnpm run lint:eslint
+      shell: bash
+
+    - name: Unit Tests
+      run: pnpm run test:unit
+      shell: bash
+
+    - name: CLI Tests
+      run: pnpm run test:cli
+      shell: bash

@@ -1,14 +1,17 @@
 {
-  "name": "icon-sprite",
-  "build": {
-    "dockerfile": "Dockerfile"
-  },
-  "runArgs": ["--name", "woodbrettm.icon-sprite.dev"],
-  "postCreateCommand": ["pnpm", "install"],
-  "remoteUser": "node",
+  "$schema": "https://raw.githubusercontent.com/devcontainers/spec/main/schemas/devContainer.schema.json",
+  "name": "Icon Sprite",
+  "dockerComposeFile": "./compose.yml",
+  "service": "node",
+  "workspaceFolder": "/home/node/icon-sprite",
   "customizations": {
     "vscode": {
-      "extensions": ["esbenp.prettier-vscode"]
+      "extensions": [
+        "voidzero.vite-plus-extension-pack"
+      ]
+    },
+    "settings": {
+      "remote.containers.copyGitConfig": true
     }
   }
 }

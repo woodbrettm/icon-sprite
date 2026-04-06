@@ -1,13 +1,7 @@
-# Vite-Related
-dist
-
-# PNPM Files
-.pnpm-store
 node_modules
 
-
-# Vitest Files
-coverage
+.pnpm-store
+.vscode
 
 # macOS-specific files
 .DS_Store

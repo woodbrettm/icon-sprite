@@ -1,51 +1,21 @@
 {
-  "name": "icon-sprite",
-  "version": "0.1.2",
+  "$schema": "https://www.schemastore.org/package.json",
   "type": "module",
-  "description": "Combines svg icons into a single sprite file.",
-  "author": "Brett Wood",
-  "keywords": [
-    "combine",
-    "merge",
-    "svg",
-    "sprite",
-    "icons"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/woodbrettm/icon-sprite"
-  },
+  "private": true,
   "license": "MIT",
-  "bugs": "https://github.com/woodbrettm/icon-sprite/issues",
-  "homepage": "https://github.com/woodbrettm/icon-sprite",
   "scripts": {
-    "build": "vite build",
-    "test": "vitest --run",
-    "test:ci": "vitest --run --coverage",
-    "coverage": "vitest run --coverage",
-    "demo-sprite": "esrun ./demo/generate-sprite.ts"
-  },
-  "files": [
-    "dist"
-  ],
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "module": "./dist/index.js",
-  "exports": {
-    ".": {
-      "import": "./dist/index.js"
-    }
-  },
-  "dependencies": {
-    "prettier": "3.0.3"
+    "lint:eslint": "eslint --config \"./eslint.config.ts\"",
+    "test:unit": "",
+    "test:cli": "",
+    "changeset:add": "changeset",
+    "changeset:version": "changeset version",
+    "changeset:release": "changeset publish"
   },
   "devDependencies": {
-    "@types/node": "20.8.5",
-    "@vitest/coverage-v8": "0.34.6",
-    "typescript": "5.2.2",
-    "vite": "4.5.0",
-    "vite-plugin-dts": "3.6.1",
-    "vitest": "0.34.6",
-    "@digitak/esrun": "3.2.25"
+    "@changesets/cli": "2.30.0",
+    "@types/node": "25.5.0",
+    "jiti": "2.6.1",
+    "typescript": "6.0.2",
+    "vite-plus": "0.1.14"
   }
 }

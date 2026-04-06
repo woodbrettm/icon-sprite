@@ -1,0 +1,15 @@
+name: icon-sprite
+services:
+  node:
+    build:
+      context: .
+      dockerfile: ./node.Dockerfile
+    image: localhost/icon-sprite-devcontainer-node:latest
+    container_name: icon-sprite-devcontainer
+    userns_mode: "keep-id"
+    volumes:
+      - ../:/home/node/icon-sprite
+      - ${SSH_AUTH_SOCK}:/home/node/ssh-agent
+    tty: true
+    environment:
+      - SSH_AUTH_SOCK=/home/node/ssh-agent

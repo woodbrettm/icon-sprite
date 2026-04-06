@@ -1,0 +1,61 @@
+{
+  "$schema": "https://www.schemastore.org/package.json",
+  "name": "icon-sprite",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Combines svg icons into a single sprite file.",
+  "author": "Brett Wood",
+  "keywords": [
+    "combine",
+    "merge",
+    "svg",
+    "sprite",
+    "icons"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/woodbrettm/icon-sprite"
+  },
+  "license": "MIT",
+  "bugs": "https://github.com/woodbrettm/icon-sprite/issues",
+  "homepage": "https://github.com/woodbrettm/icon-sprite",
+  "scripts": {},
+  "files": [
+    "lib",
+    "package.json",
+    "LICENSE",
+    "README.md",
+    "bin"
+  ],
+  "bin": {
+    "sprite": "./bin/cli.js"
+  },
+  "exports": {
+    ".": {
+      "import": "./lib/main.js",
+      "types": "./lib/main.d.ts"
+    }
+  },
+  "imports": {
+    "#compiler/*": "./src/compiler/*",
+    "#cli/*": "./src/cli/*",
+    "#error/*": "./src/error/*",
+    "#logger/*": "./src/logger/*",
+    "#utils/*": "./src/utils/*",
+    "#vendor/*": "./src/vendor/*"
+  },
+  "dependencies": {
+    "@types/node": "25.5.0",
+    "fast-xml-parser": "5.5.9",
+    "c12": "4.0.0-beta.4",
+    "remeda": "2.33.6",
+    "type-fest": "5.5.0",
+    "nanoid": "5.1.7",
+    "deep-freeze-es6": "5.0.0",
+    "arktype": "2.2.0"
+  },
+  "devDependencies": {
+    "typescript": "6.0.2",
+    "vite-plus": "0.1.14"
+  }
+}
