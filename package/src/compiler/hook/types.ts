@@ -2,18 +2,20 @@ import type { PossibleVoidResult, RequireKeys } from '#utils/types.ts';
 import type { ResolvedFilePath } from '#utils/types.ts';
 import type { BuildConfig } from '#compiler/config/types.ts';
 import type { LogFunctionArgs } from '#logger/types.ts';
-import type { LoggingContext } from '#logger/types.ts';
 import type { Job } from '#compiler/job/types.ts';
 
 
 export type HookBuildContext = {
   root: ResolvedFilePath;
   meta: CustomHookMetadata;
-  log(args: LogFunctionArgs, ctx: LoggingContext): Promise<void>;
+  log: HookBuildContextLogger;
 }
 
-export interface CustomHookMetadata
-{}
+export type HookBuildContextLogger = (
+  (args: LogFunctionArgs) => Promise<void>
+);
+
+export interface CustomHookMetadata {}
 
 export type HookKeys = (
   | 'configFinalized'

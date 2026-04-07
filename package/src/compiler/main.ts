@@ -51,11 +51,12 @@ export function scaffoldBuildContext
 (config: BuildConfig)
 : BuildContext
 {
+  const loggingCtx = scaffoldLoggingContext(config);
   const buildCtx: BuildContext = {
     root: config.root,
     hooks: scaffoldHookPipes(config),
-    loggingCtx: scaffoldLoggingContext(config),
-    hookCtx: scaffoldHookBuildContext(config),
+    loggingCtx: loggingCtx,
+    hookCtx: scaffoldHookBuildContext(config, loggingCtx),
     log: buildContextLogWrapper,
   };
   return buildCtx;
